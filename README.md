@@ -18,5 +18,8 @@ Meme accessibility for people from different walks of life and ages
 a user visits the website to create a meme:
 - user searches for a term they're interested in
 - user then selects an image and a quote they want to combine to create one image
-- there's also an option to get a random 
+- there's also an option to choose a random topic without searching for your own topic
+- once the meme is created, it will get it's own url that will be used with the social media pugins
+- user will post their meme to their facebook or twitter!
+
 
