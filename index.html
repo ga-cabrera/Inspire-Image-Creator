@@ -12,16 +12,18 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-            <span class="navbar-brand mb-0 h1">Content</span>
+            <span class="navbar-brand mb-0 h1 mx-auto">Content</span>
             </nav>
 
 <div class="container">
     <div class="row"> <!-- giphy container, add search bar and div for giphy's that will pop up, like from GIPHY API assignment-->
         <div class="col-6">
-            <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Gif It Up" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+            <div class="card">
+                <form class="form-inline m-3 mx-auto">
+                    <input id="gif-search" class="form-control m-sm-2 mx-auto" type="search" placeholder="Gif It Up" aria-label="Search">
+                    <button id="gif-button" class="btn btn-outline-dark mx-auto" type="submit">Search</button>
+                </form>
+            </div>
         </div>
         <div class="col-6">TEXT CONTAINER-FREDERICA
 
