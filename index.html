@@ -8,7 +8,8 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS Style -->
-    <link rel="stylesheet" href=""> <!-- YOUR CSS LINK FILE-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">  <!-- YOUR CSS LINK FILE-->
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -28,13 +29,26 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">TEXT CONTAINER-FREDERICA
-
+        <div class="col-6">
+            <div class="card m-3">
+                <form class="form-inline m-1 mx-auto">
+                    <input id="add-text" class="form-control m-sm-2 mx-auto" style="width: 30rem; height: 18rem;" type="search" placeholder="Add Text Here" aria-label="Search">
+                    <button id="add-text-button" class="btn btn-outline-dark mx-auto" type="submit">Add</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="row"> <!--phrase/quote container-->
-        <div class="col-6">TEXT & GIF-NICK
-
+        <div class="col-6">
+            <div class="card m-3">
+                <div id="newGifContainer" class="card m-3 mx-auto" style="width: 30rem; height: 18rem; background-color:gray" >
+                    <div id="newGif">
+                        <div id="textContainer"><!-- TEXT HERE--></div>
+                        <div id="giphyGif"><!--GIF FROM GIPHY HERE--></div>
+                    </div>
+                </div>
+                    <button id="newGifButton" class="btn btn-outline-dark mx-auto m-2 mt-0" type="submit">Search</button>
+                </div>
 
         </div>
         <div class="col-6" id="quote-container">
