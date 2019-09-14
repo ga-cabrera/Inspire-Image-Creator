@@ -12,10 +12,10 @@ We plan on using social media api’s to share image file and we want to use the
 ## Target Audience
 Mainly pre-teens and Young adults 
 ## Problem & how to address it 
-image file accessibility for people from different walks of life and ages
+Allows users to create their own content easily and quickly without having to pay for photo editing software or dealing with editing apps.
 
 ## Use Case
-a user visits the website to create a image file:
+a user visits the website to create an image file:
 - user searches for a term they're interested in
 - user then selects an image and a quote they want to combine to create one image
 - there's also an option to choose a random topic without searching for your own topic
