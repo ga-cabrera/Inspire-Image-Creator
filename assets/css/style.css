@@ -4,3 +4,6 @@
     height: 16rem;
     margin: auto;
 }
+#addText{
+    overflow: scroll;
+}
