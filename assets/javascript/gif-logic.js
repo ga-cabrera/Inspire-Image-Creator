@@ -34,6 +34,7 @@ function gifclick(a){
 
             // Giving the image tag an src attribute of a proprty pulled off the
             // result item
+            personImage.attr("id", "gif-image");
             personImage.attr("src", results.images.fixed_height_still.url);
             personImage.attr("data-still", results.images.fixed_height_still.url);
             personImage.attr("data-animate", results.images.fixed_height.url);
