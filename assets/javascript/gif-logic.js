@@ -76,16 +76,9 @@ $("#gif-button").on("click", function(event){
   var newSearch = $("input").eq(0).val();
   // Creating a variable to check empty input
   var emptyinput = document.forms["search-form"]["gif-search"].value;
-  // Checking if there is an empty input
-	// If yes - ask user to input again
-  if (emptyinput == ""){
-    alert("Please input your favorite Sport team"); 
-  } else{
     //Adding new input from usesr into topics array
     topics = newSearch;
     console.log(topics);
-    return false;
-  }
 })
 
 gifclick(topicsclicker2);
