@@ -4,3 +4,9 @@
     height: 16rem;
     margin: auto;
 }
+#addText{
+    font-family: Andale Mono, monospace;
+}
+#textContainer{
+    font-family: Andale Mono, monospace;
+}
