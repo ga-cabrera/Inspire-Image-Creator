@@ -79,7 +79,7 @@ $("#gif-button").on("click", function(event){
   // Checking if there is an empty input
 	// If yes - ask user to input again
   if (emptyinput == ""){
-    alert("Please input your favorite Sport team"); 
+    alert("Please input your content"); 
   } else{
     //Adding new input from usesr into topics array
     topics = newSearch;
