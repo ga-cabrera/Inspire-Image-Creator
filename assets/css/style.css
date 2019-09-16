@@ -5,5 +5,8 @@
     margin: auto;
 }
 #addText{
-    overflow: scroll;
+    font-family: Andale Mono, monospace;
+}
+#textContainer{
+    font-family: Andale Mono, monospace;
 }
