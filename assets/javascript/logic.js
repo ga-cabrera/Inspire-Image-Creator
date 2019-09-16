@@ -1,5 +1,6 @@
-// Click event to get quote
-
+var quote;
+var author;
+// Click event to get random quote
 $("#random-quote").on("click", function () {
     $("#quote").empty();
     $("#author").empty();
@@ -16,8 +17,6 @@ $("#random-quote").on("click", function () {
         method: "GET"
     }).then(function (response) {
         console.log(response)
-        var quote;
-        var author;
         if(randomQuote === kanyeQueryURL) {
             quote = $("<p>").text(response.quote);
             author = $("<p>").text("-Kanye West");
@@ -32,6 +31,12 @@ $("#random-quote").on("click", function () {
             author = $("<p>").text("-Ron Swanson");
         }   
         $("#quote").append(quote);
-        $("#author").append(author)
+        $("#author").append(author);
     });
-})
+});
+
+//Add Quote to image
+$("#add-quote").on("click", function(event){
+    event.preventDefault();
+    $("#textContainer").append(quote, author);
+});
