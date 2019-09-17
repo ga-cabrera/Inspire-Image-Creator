@@ -14,7 +14,7 @@ function gifclick(a){
         // the offset will be a random number between 1-25 + 1-10
         var offset = `&offset=${randomNumber}`;
         // url with api key
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10" + offset;
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=6" + offset;
         console.log(queryURL)
         // Performing our AJAX GET request
         $.ajax({
@@ -27,18 +27,16 @@ function gifclick(a){
             // for each response, create a div with .gif-item
             var gifItem = $("<div class=\"gif-item\">");
             var title = results[i].title;
-            var gifTitle = $("<p>").text(`Title: ${title}`);
             var gifAnimated = results[i].images.fixed_height.url;
             console.log(response);
-
+            
+            // adds source to gif image files
+            var gif = $("<img>");
+            gif.attr("src", gifAnimated);
+            // appends gif to gif container
+            gifItem.append(gif);
+            $("#gif-container").prepend(gifItem);
           }
-          // adds source to gif image files
-          var gif = $("<img>");
-          gif.attr("src", gifAnimated);
-          // appends gif to gif container
-          gifItem.append(gif);
-          gifItem.append(gifTitle);
-          $("#gif-container").prepend(gifItem);
         })
     });
 
