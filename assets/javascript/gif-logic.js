@@ -7,68 +7,59 @@ function gifclick(a){
     $(a).on("click", function() {
         $("#gif-container").empty();
         // In this case, the "this" keyword refers to the button that was clicked
-        // var topicName = $(this).attr("topic");
         var topicName = topics;
         console.log(topicName);
-
-        // Constructing a URL to search Giphy for the name of the person who said the quote
-        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&tag=" + topicName;
-        console.log(queryURL);
-
+        //generates a random number between 1 and 25
+        var randomNumber = Math.floor(Math.random() * 25) + (Math.floor(Math.random() * 10));
+        // the offset will be a random number between 1-25 + 1-10
+        var offset = `&offset=${randomNumber}`;
+        // url with api key
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10" + offset;
+        console.log(queryURL)
         // Performing our AJAX GET request
         $.ajax({
-        url: queryURL,
-        method: "GET"
-        })
-        // After the data comes back from the API
-        .then(function(response) {
-            // Storing an array of results in the results variable
-            var results = response.data;
-            console.log(results);
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+          var results = response.data;
+          // loops through their response
+          for (var i = 0; i < results.length; i++) {
+            // for each response, create a div with .gif-item
+            var gifItem = $("<div class=\"gif-item\">");
+            var title = results[i].title;
+            var gifTitle = $("<p>").text(`Title: ${title}`);
+            var gifAnimated = results[i].images.fixed_height.url;
             console.log(response);
 
-            var gifDiv = $("<div class='image-content'>");
-
-            // Creating an image tag
-            var personImage = $("<img>");
-
-            // Giving the image tag an src attribute of a proprty pulled off the
-            // result item
-            personImage.attr("id", "gif-image");
-            personImage.attr("src", results.images.fixed_height_still.url);
-            personImage.attr("data-still", results.images.fixed_height_still.url);
-            personImage.attr("data-animate", results.images.fixed_height.url);
-            personImage.attr("data-state", "still");
-            personImage.addClass("image-btn");
-
-            // Appending the paragraph and personImage we created to the "gifDiv" div we created
-            gifDiv.append(personImage);
-            console.log(personImage);
-
-            // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-            $("#gif-container").prepend(gifDiv);
-            
-        });
+          }
+          // adds source to gif image files
+          var gif = $("<img>");
+          gif.attr("src", gifAnimated);
+          // appends gif to gif container
+          gifItem.append(gif);
+          gifItem.append(gifTitle);
+          $("#gif-container").prepend(gifItem);
+        })
     });
 
 }
 
-$(document).on("click",".image-btn", function() {
-  // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-  var state = $(this).attr("data-state");
-  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-  // Then, set the image's data-state to animate
-  // Else set src to the data-still value
-  if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-    $(this).attr("id", 'animate-btn');
-  } else {
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-    $(this).attr("id", 'state-btn')
-  }
-});
+// $(document).on("click",".image-btn", function() {
+//   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+//   var state = $(this).attr("data-state");
+//   // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+//   // Then, set the image's data-state to animate
+//   // Else set src to the data-still value
+//   if (state === "still") {
+//     $(this).attr("src", $(this).attr("data-animate"));
+//     $(this).attr("data-state", "animate");
+//     $(this).attr("id", 'animate-btn');
+//   } else {
+//     $(this).attr("src", $(this).attr("data-still"));
+//     $(this).attr("data-state", "still");
+//     $(this).attr("id", 'state-btn')
+//   }
+// });
 
 // Creating an  event handler function to show user input as a topicBtn when add-topic button is clicked
 $("#gif-button").on("click", function(event){
