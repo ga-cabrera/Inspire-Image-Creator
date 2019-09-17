@@ -34,6 +34,11 @@ function gifclick(a){
             gifItem.append(gif);
             $("#gif-container").prepend(gifItem);
           }
+          //Selected Gif to container
+          $("img").on("click", function(){
+            $("#giphyGif").empty();
+            $(this).clone().appendTo("#giphyGif");
+          });
         });
     });
 }
@@ -56,7 +61,7 @@ function gifclick(a){
 // });
 
 // Creating an  event handler function to show user input as a topicBtn when add-topic button is clicked
-$("#gif-button").on("click", function(event){
+$(".git-topic-button").on("click", function(event){
   event.preventDefault();
   //Grabbing the input from the textbox
   var newSearch = $("input").eq(0).val();
@@ -67,9 +72,3 @@ $("#gif-button").on("click", function(event){
 });
 
 gifclick(topicsclicker2);
-
-//Selected Gif to Gif container
-$("img").on("click", function(){
-  $("#giphyGif").empty();
-  $(this).clone().appendTo("#giphyGif");
-});
