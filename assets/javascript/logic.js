@@ -32,7 +32,7 @@ $("#random-quote").on("click", function () {
 });
 
 //Add Quote to image
-$("#add-quote").on("click", function(event){
-    event.preventDefault();
+$("#add-quote").on("click", function(){
+    $("#textContainer").empty();
     $("#textContainer").append(quote, author);
 });
