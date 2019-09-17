@@ -37,9 +37,8 @@ function gifclick(a){
             gifItem.append(gif);
             $("#gif-container").prepend(gifItem);
           }
-        })
+        });
     });
-
 }
 
 // $(document).on("click",".image-btn", function() {
@@ -69,6 +68,12 @@ $("#gif-button").on("click", function(event){
     //Adding new input from usesr into topics array
     topics = newSearch;
     console.log(topics);
-})
+});
 
 gifclick(topicsclicker2);
+
+//Selected Gif to Gif container
+$("img").on("click", function(){
+  $("#giphyGif").empty();
+  $(this).clone().appendTo("#giphyGif");
+});
