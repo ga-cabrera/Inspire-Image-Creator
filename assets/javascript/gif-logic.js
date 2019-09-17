@@ -30,6 +30,7 @@ function gifclick(a){
             var gifTitle = $("<p>").text(`Title: ${title}`);
             var gifAnimated = results[i].images.fixed_height.url;
             console.log(response);
+
           }
           // adds source to gif image files
           var gif = $("<img>");
