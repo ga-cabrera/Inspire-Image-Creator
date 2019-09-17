@@ -42,33 +42,13 @@ function gifclick(a){
 
 }
 
-// $(document).on("click",".image-btn", function() {
-//   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-//   var state = $(this).attr("data-state");
-//   // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-//   // Then, set the image's data-state to animate
-//   // Else set src to the data-still value
-//   if (state === "still") {
-//     $(this).attr("src", $(this).attr("data-animate"));
-//     $(this).attr("data-state", "animate");
-//     $(this).attr("id", 'animate-btn');
-//   } else {
-//     $(this).attr("src", $(this).attr("data-still"));
-//     $(this).attr("data-state", "still");
-//     $(this).attr("id", 'state-btn')
-//   }
-// });
-
-// Creating an  event handler function to show user input as a topicBtn when add-topic button is clicked
+// Creating an  event handler function to show user input as a topicBtn when gif-topic button is clicked
 $("#gif-button").on("click", function(event){
   event.preventDefault();
   //Grabbing the input from the textbox
   var newSearch = $("input").eq(0).val();
-  // Creating a variable to check empty input
-  var emptyinput = document.forms["search-form"]["gif-search"].value;
-    //Adding new input from usesr into topics array
-    topics = newSearch;
-    console.log(topics);
+  //Adding new input from usesr into topics array
+  topics = newSearch;
 })
 
 gifclick(topicsclicker2);
