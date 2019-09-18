@@ -25,9 +25,10 @@ $("#random-quote").on("click", function () {
             quote = $("<p>").text(response[0]);
             author = $("<p>").text("-Ron Swanson");
         }   
-        $("#quote").append(quote);
-        $("#author").append(author);
     });
+    //Append quote to quote bin
+    $("#quote").append(quote);
+    $("#author").append(author);
 });
 
 //Add Quote to image
