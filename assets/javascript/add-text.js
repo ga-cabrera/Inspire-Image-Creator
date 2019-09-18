@@ -5,3 +5,8 @@ $("#add-text-button").on("click", function(event){
     $("#textContainer").text(text[0].value);
     console.log(text);
 });
+
+//Clear text from gif
+$("#clear-text").on("click", function(){
+    $("#textContainer").empty();
+});
