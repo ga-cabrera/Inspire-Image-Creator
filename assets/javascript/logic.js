@@ -34,5 +34,5 @@ $("#random-quote").on("click", function () {
 //Add Quote to image
 $("#add-quote").on("click", function(){
     $("#textContainer").empty();
-    $("#quote-bin").clone().appendTo("#textContainer");
+    $("#quote").clone().appendTo("#textContainer");
 });
