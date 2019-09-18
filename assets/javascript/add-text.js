@@ -3,7 +3,6 @@ var text = $("#addText")
 $("#add-text-button").on("click", function(event){
     event.preventDefault();
     $("#textContainer").text(text[0].value);
-    console.log(text);
 });
 
 //Clear text from gif

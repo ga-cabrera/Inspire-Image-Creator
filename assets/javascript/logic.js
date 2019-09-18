@@ -15,7 +15,6 @@ $("#random-quote").on("click", function () {
         url: randomQuote,
         method: "GET"
     }).then(function (response) {
-        console.log(response)
         if(randomQuote === kanyeQueryURL) {
             quote = $("<p>").text(response.quote);
             author = $("<p>").text("-Kanye West");
@@ -34,5 +33,5 @@ $("#random-quote").on("click", function () {
 //Add Quote to image
 $("#add-quote").on("click", function(){
     $("#textContainer").empty();
-    $("#textContainer").append(quote, author);
+    $("#quote-bin").clone().appendTo("#textContainer");
 });
