@@ -23,21 +23,28 @@
         <span class="navbar-brand mb-0 h1 mx-auto">Content Creator</span>
     </nav>
 <div class="container" style="background-color:whitesmoke">
-    <!-- giphy container, add search bar and div for giphy's that will pop up, like from GIPHY API assignment-->
+    <!-- Image container, add search bar and div for picsum that will pop up, like from GIPHY API assignment-->
     <div class="row"> 
         <div class="col">
             <div class="card m-3">
-                <button id="image-button" class="git-topic-button btn btn-outline-dark mx-auto" type="submit">Search</button>                
-                <h4 class="text-center">Click search button for a different image!</h4>
-                <div id="image-container" class="card m-3 mx-auto d-flex flex-row flex-wrap justify-content-around" ><!-- image display here --></div>
+                <button id="image-button" class="git-topic-button btn btn-outline-dark mx-auto">New Image</button>                
+                <div id="image-container" class="card m-3 mx-auto d-flex flex-row flex-wrap justify-content-around" ><!-- image display here -->
+                    <canvas id="myCanvas" width="600" height="400"><!--IMAGE GOES HERE--></canvas>
+                </div>
+                <div id="textContainer" class="text-center"><!-- TEXT HERE--></div>
+                <!--combines the image file with text using canvas -->
+                <button id="newImageButton" class="btn btn-outline-dark mx-auto m-2 mt-0"
+                onclick="myCanvas()">Combine!</button>
+                <button id="clear-text" class="btn btn-outline-dark mx-auto m-2 mt-0">Clear Text</button>
             </div>
         </div>
     </div>
-    <div class="row"> <!--phrase/quote container-->
+    <div class="row">
+        <!--phrase/quote container-->
         <div class="col-6" id="quote-container">
             <div class="card m-3 mx-auto">
                 <div class="card-body text-center m-1 mx-auto">
-                    <h5 class="card-title">Looking for Insipration?</h5>
+                    <h5 class="card-title">Need Insipration?</h5>
                     <button type="button" class="btn btn-secondary" id="random-quote">Random Quote</button>
                     <div class="bg-light mx-auto" id="quote-bin-display" style="width:30rem; height: 6.41rem;">
                         <br>
@@ -45,39 +52,21 @@
                         <br>
                         <span id="author"></span>
                     </div>
-                    <p>Add it to your image!</p>
+                    <p>Add quote to image!</p>
                     <br>
                     <button type="button" class="btn btn-secondary" id="add-quote">Add</button>
                 </div>
             </div>
         </div>
-            <div class="col-6">
-                <div class="card m-3 mx-auto">
-                    <form class="form-inline m-1 mx-auto"><!--manually entered text-->
-                        <textarea class="form-control" id="addText" rows="6" style="width: 33rem;height: 15rem;"></textarea>
-                    </form>
-                    <button id="add-text-button" class="btn btn-outline-dark mx-auto" type="submit">Add Your Own Quote!</button>
-                </div>
+        <div class="col-6">
+            <div class="card m-3 mx-auto">
+                <form class="form-inline m-1 mx-auto">
+                    <!--manually entered text-->
+                    <textarea class="form-control" id="addText" rows="6" style="width: 33rem;height: 15rem;"></textarea>
+                </form>
+                <button id="add-text-button" class="btn btn-outline-dark mx-auto" type="submit">Add Your Own Quote!</button>
             </div>
-    </div>
-    <div class="row">
-            <div class="col">
-                    <div class="card m-3">
-                        <div id="newPosterContainer" class="card m-3 mx-auto background-color:black" >
-                            <div id="newImage">
-                                <div id="textContainer"><!-- TEXT HERE--></div>
-                                <div id="giphyGif">
-                                    
-                                    <canvas id="myCanvas" width="400" height="400"><!-- IMAGE GOES HERE -->
-                                        Your browser does not support the HTML5 canvas tag.</canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <button id="clear-text" class="btn btn-outline-dark mx-auto m-2 mt-0">Clear Text</button>
-                        <!--combines the image file with text using canvas -->
-                        <button id="newImageButton" class="btn btn-outline-dark mx-auto m-2 mt-0" onclick="myCanvas()">Combine!</button>
-                    </div>
-                </div>
+        </div>
     </div>
     <!--social media share buttons.-->
     <div class="row"> 
