@@ -1,74 +1,15 @@
-// initial variable
-var topics = "";
-topicsclicker2 = ".git-topic-button";
-
-// Adding click event listen listener to all buttons
-function gifclick(a){
-    $(a).on("click", function() {
-        $("#gif-container").empty();
-        // In this case, the "this" keyword refers to the button that was clicked
-        var topicName = topics;
-        //generates a random number between 1 and 25
-        var randomNumber = Math.floor(Math.random() * 25) + (Math.floor(Math.random() * 10));
-        // the offset will be a random number between 1-25 + 1-10
-        var offset = `&offset=${randomNumber}`;
-        // url with api key
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=6" + offset;
-        // Performing our AJAX GET request
-        $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(function(response) {
-          var results = response.data;
-          // loops through their response
-          for (var i = 0; i < results.length; i++) {
-            // for each response, create a div with .gif-item
-            var gifItem = $("<div class=\"gif-item\">");
-            var title = results[i].title;
-            var gifAnimated = results[i].images.fixed_height.url;
-            
-            // adds source to gif image files
-            var gif = $("<img>");
-            gif.attr("src", gifAnimated);
-            // appends gif to gif container
-            gifItem.append(gif);
-            $("#gif-container").prepend(gifItem);
-          }
-          //Selected Gif to container
-          $("img").on("click", function(){
-            $("#giphyGif").empty();
-            $(this).clone().appendTo("#giphyGif");
-          });
-        });
+//function to query random images from picsum
+$("#newImageButton").on("click", function(){
+  var number = Math.floor(Math.random()*1085);
+  var queryURL = "https://picsum.photos/id/" + number + "/200/200"
+  var img = $("<img>");
+  img.attr("src=", queryURL)
+  console.log(img);
+  $("#myCanvas").empty();
+  $(img).appendTo("#myCanvas");
+    //get the image and append to the image container
+    $("#image-button").on("click", function(){ 
+      $(img).appendTo("#image-container");
     });
-}
-
-// $(document).on("click",".image-btn", function() {
-//   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-//   var state = $(this).attr("data-state");
-//   // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-//   // Then, set the image's data-state to animate
-//   // Else set src to the data-still value
-//   if (state === "still") {
-//     $(this).attr("src", $(this).attr("data-animate"));
-//     $(this).attr("data-state", "animate");
-//     $(this).attr("id", 'animate-btn');
-//   } else {
-//     $(this).attr("src", $(this).attr("data-still"));
-//     $(this).attr("data-state", "still");
-//     $(this).attr("id", 'state-btn')
-//   }
-// });
-
-// Creating an  event handler function to show user input as a topicBtn when add-topic button is clicked
-$(".git-topic-button").on("click", function(event){
-  event.preventDefault();
-  //Grabbing the input from the textbox
-  var newSearch = $("input").eq(0).val();
-  // Creating a variable to check empty input
-  var emptyinput = document.forms["search-form"]["gif-search"].value;
-    //Adding new input from usesr into topics array
-    topics = newSearch;
 });
-
-gifclick(topicsclicker2);
+    
