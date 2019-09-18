@@ -1,11 +1,15 @@
 function myCanvas() { // what does this function do? It appears it's just setting canvas div to 2d and setting any text content to arial 30 with certain stroke weight. Its that it?
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
-    var img = document.getElementById("gif-image"); // where does "gif-image" exist?
-    var quote = document.getElementById("quote").textContent;//Random quote API area
-    var text = document.getElementById("addText").textContent;//manually entered text
+    var img = document.getElementById("picsum-image"); // where does "gif-image" exist?
+    var quote = document.getElementById("textContainer").textContent;//Random quote API area
     ctx.drawImage(img,10,10);
-    ctx.font = "30px Arial";
-    ctx.strokeText(quote,100,100);
-    ctx.strokeText(text,100,100);
+    ctx.font = "25px Georgia";
+    var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+    gradient.addColorStop("0", "magenta");
+    gradient.addColorStop("0.5", "blue");
+    gradient.addColorStop("1.0", "red");
+    ctx.fillStyle = gradient;
+    ctx.fillText(quote, 150, 50,399);
+
 }
