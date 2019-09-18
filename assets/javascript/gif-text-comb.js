@@ -6,13 +6,13 @@ function myCanvas() { // what does this function do? It appears it's just settin
     $("#image-container").empty();
     $(img).appendTo("#image-container");
 
-    // var quote = document.getElementById("textContainer").textContent;//Random quote API area
-    // ctx.font = "25px Georgia";
-    // var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
-    // gradient.addColorStop("0", "magenta");
-    // gradient.addColorStop("0.5", "blue");
-    // gradient.addColorStop("1.0", "red");
-    // ctx.fillStyle = gradient;
-    // ctx.fillText(quote, 150, 50,399);
+    var quote = document.getElementById("textContainer").textContent;//Random quote API area
+    ctx.font = "25px Georgia";
+    var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+    gradient.addColorStop("0", "magenta");
+    gradient.addColorStop("0.5", "blue");
+    gradient.addColorStop("1.0", "red");
+    ctx.fillStyle = gradient;
+    ctx.fillText(quote, 150, 50,399);
 
 }
