@@ -7,5 +7,6 @@ $("#image-button").on("click", function(){
   img.attr("src", queryURL)
   img.attr("id", "picsum-image")
   $(img).appendTo("#image-container");
+  console.log(number);
 });
     
