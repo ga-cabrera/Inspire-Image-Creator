@@ -8,5 +8,6 @@ $("#image-button").on("click", function(){
   img.attr("id", "picsum-image")
   $(img).appendTo("#image-container");
   console.log(number);
+  addTextToCanvas();
 });
     
