@@ -2,7 +2,6 @@ var quote;
 var author;
 // Click event to get random quote
 $("#random-quote").on("click", function() {
-    $("#textContainer").empty();
     $("#quote").empty();
     $("#author").empty();
     var kanyeQueryURL = "https://api.kanye.rest";
@@ -28,8 +27,8 @@ $("#random-quote").on("click", function() {
         }   
     });
     //Append quote to quote bin
-    $(quote).appendTo("#quote");
-    $(author).appendTo("#author");
+    $("#quote").append(quote);
+    $("#author").append(author);
 });
 
 //Add Quote to image
@@ -38,3 +37,4 @@ $("#add-quote").on("click", function() {
     $("#quote").clone().appendTo("#textContainer");
     $("#author").clone().appendTo("#textContainer");
 });
+
